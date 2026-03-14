@@ -1,0 +1,300 @@
+body{
+    margin:0;
+    font-family:Inter;
+    background:#050511;
+    color:white;
+    overflow-x:hidden; /* prevents whole page horizontal scroll */
+}
+
+#app{
+    display:flex;
+    height:100vh;
+}
+
+/* SIDEBAR */
+#sidebar{
+    width:220px;
+    padding:30px 20px;
+    border-right:2px solid #4b54ff;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.nav-btn{
+    background:#1c1c2d;
+    color:#4b54ff;
+    border:none;
+    padding:12px;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.nav-btn.active{
+    background:#4b54ff;
+    color:white;
+}
+
+/* MAIN */
+#main{
+    flex:1;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
+
+.page{
+    width:100%;
+    min-height:calc(100vh - 60px);
+}
+
+.hidden{
+    display:none;
+}
+
+/* HOME */
+.title{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.white{
+    color:white;
+}
+
+.blue{
+    color:#4b54ff;
+}
+
+.subtitle{
+    opacity:.7;
+    margin-bottom:50px;
+}
+
+.analytics{
+    width:100%;
+    max-width:1300px;
+    margin-bottom:50px;
+}
+
+.analytics-item{
+    margin-bottom:12px;
+}
+
+.bar{
+    height:10px;
+    background:#1c1c2d;
+    border-radius:10px;
+}
+
+.bar span{
+    display:block;
+    height:100%;
+    background:#4b54ff;
+    border-radius:10px;
+}
+
+/* VIDEO BAR */
+#video-bar{
+    display:flex;
+    gap:15px;
+    overflow-x:auto; /* only this scrolls */
+    overflow-y:hidden;
+    padding:10px 0;
+    scroll-behavior:smooth;
+}
+
+#video-bar iframe{
+    min-width:300px;
+    height:170px;
+    border-radius:10px;
+    border:none;
+    flex-shrink:0;
+}
+
+/* scrollbar styling */
+#video-bar::-webkit-scrollbar{
+    height:8px;
+}
+
+#video-bar::-webkit-scrollbar-thumb{
+    background:#4b54ff;
+    border-radius:10px;
+}
+
+/* CHAT */
+#chat-box{
+    height:calc(100vh - 280px);
+    overflow-y:auto;
+    background:#11111a;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:10px;
+    box-shadow:0 0 20px rgba(75,84,255,0.1) inset;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.message{
+    padding:10px 14px;
+    border-radius:12px;
+    max-width:60%;
+    word-break:break-word;
+    white-space:pre-wrap;
+    display:inline-block;
+}
+
+.you{
+    background:#4b54ff;
+    align-self:flex-end;
+    color:white;
+}
+
+.other{
+    background:#1c1c2d;
+    align-self:flex-start;
+    color:white;
+}
+
+.message img{
+    max-width:100%;
+    max-height:300px;
+    height:auto;
+    border-radius:10px;
+    display:block;
+    margin-top:5px;
+    object-fit:cover;
+}
+
+.chat-input-row{
+    display:flex;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+#message-input{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#1c1c2d;
+    color:white;
+}
+
+#message-input::placeholder{
+    color:#888;
+}
+
+/* BUTTON */
+.btn{
+    background:#4b54ff;
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:10px 18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.btn:hover{
+    opacity:0.9;
+}
+
+/* CHAT ACTION BUTTONS */
+#clear-btn,
+#ai-btn{
+    width:100%;
+    max-width:1200px;
+    border:none;
+    border-radius:12px;
+    padding:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+#clear-btn{
+    background:#e53935;
+    color:white;
+}
+
+#ai-btn{
+    background:#4b54ff;
+    color:white;
+    margin-top:8px;
+}
+
+#clear-btn:hover,
+#ai-btn:hover{
+    opacity:0.9;
+}
+
+#file-input{
+    display:none;
+}
+
+/* TASKS */
+.task-input-row{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+#task-input{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#1c1c2d;
+    color:white;
+}
+
+#tasks-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:700px;
+}
+
+.task-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#1c1c2d;
+    padding:12px;
+    border-radius:12px;
+}
+
+.task-text{
+    flex:1;
+    margin-right:10px;
+    word-break:break-word;
+}
+
+.task-btn{
+    border:none;
+    border-radius:10px;
+    padding:6px 12px;
+    font-weight:600;
+    cursor:pointer;
+    margin-left:6px;
+}
+
+.done-btn{
+    background:#4b54ff;
+    color:white;
+}
+
+.delete-task{
+    background:#e53935;
+    color:white;
+}
+
+.task-btn:hover{
+    opacity:0.9;
+}

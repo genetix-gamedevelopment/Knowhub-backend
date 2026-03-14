@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KnowHub</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <button id="home-btn" class="nav-btn active">Home</button>
+    <button id="chat-btn" class="nav-btn">Chat</button>
+    <button id="tasks-btn" class="nav-btn">Tasks</button>
+  </div>
+
+  <!-- MAIN -->
+  <div id="main">
+
+    <!-- HOME -->
+    <div id="home-container" class="page">
+      <h1 class="title"><span class="white">Welcome to </span><span class="blue">KnowHub!</span></h1>
+      <p class="subtitle">Your workspace for chatting and tasks.</p>
+
+      <div class="analytics">
+
+        <div class="analytics-item">
+          <p>Productivity (Tasks Completed)</p>
+          <div class="bar">
+            <span id="productivity-bar"></span>
+          </div>
+        </div>
+
+        <div class="analytics-item">
+          <p>Tasks Remaining</p>
+          <div class="bar">
+            <span id="remaining-bar"></span>
+          </div>
+        </div>
+
+        <div class="analytics-item">
+          <p>Total Tasks Reference</p>
+          <div class="bar">
+            <span id="total-bar"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- VIDEO BAR -->
+      <div id="video-bar-container">
+        <p class="video-bar-label">Khan Academy Videos</p>
+        <div id="video-bar">
+          <!-- JS will inject iframes here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAT -->
+    <div id="chat-container" class="page hidden">
+      <div id="chat-box"></div>
+      <div class="chat-input-row">
+        <input id="message-input" placeholder="Type a message...">
+        <label for="file-input" class="btn">Upload</label>
+        <input type="file" id="file-input">
+        <button id="send-btn" class="btn">Send</button>
+      </div>
+      <button id="clear-btn">Clear Messages</button>
+      <button id="ai-btn">Ask AI</button>
+    </div>
+
+    <!-- TASKS -->
+    <div id="tasks-container" class="page hidden">
+      <h1>Tasks</h1>
+      <div class="task-input-row">
+        <input id="task-input" placeholder="Add a new task...">
+        <button id="add-task-btn" class="btn">Add</button>
+      </div>
+      <div id="tasks-list"></div>
+    </div>
+
+  </div>
+</div>
+
+<script type="module" src="popup.js"></script>
+</body>
+</html>
